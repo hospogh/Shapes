@@ -6,21 +6,29 @@ using System.Threading.Tasks;
 
 namespace Shapes
 {
-    class Circle : Shape
+    class Circle : IShape
     {
         public int Radius { get; set; }
+
+        public double Area
+        {
+            get
+            {
+                return GetArea();
+            }
+        }
 
         public Circle(int radius)
         {
             this.Radius = radius;
         }
 
-        public override double GetArea()
+        public  double GetArea()
         {
             return Math.PI * Math.Pow(this.Radius, 2);
         }
 
-        public override double GetPerimeter()
+        public  double GetPerimeter()
         {
             return 2 * Math.PI * this.Radius;
         }

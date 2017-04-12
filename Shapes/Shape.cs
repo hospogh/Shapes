@@ -6,21 +6,13 @@ using System.Threading.Tasks;
 
 namespace Shapes
 {
-    abstract class Shape
+    interface IShape
     {
-        public abstract double GetArea();
-        public abstract double GetPerimeter();
-        public  double Area
+        double GetArea();
+        double GetPerimeter();
+        double Area
         {
-            get
-            {
-                return GetArea();
-            }
-        }
-
-        public void Print()
-        {
-            Console.WriteLine("Area is: {0}, Perimeter is: {1}", GetArea(), GetPerimeter());
+            get;
         }
     }
 }

@@ -10,18 +10,18 @@ namespace Shapes
     {
         static void Main(string[] args)
         {
-            Shape rect = new Rectangle(4 ,5);
-            Shape circle = new Circle(6);
-            Shape triangle = new Triangle(4, 4, 4);
+            IShape rect = new Rectangle(4 ,5);
+            IShape circle = new Circle(6);
+            IShape triangle = new Triangle(4, 4, 4);
 
-            List<Shape> shapes = new List<Shape>();
+            List<IShape> shapes = new List<IShape>();
             shapes.Add(rect);
             shapes.Add(circle);
             shapes.Add(triangle);
 
-            foreach(Shape shape in shapes)
+            foreach(IShape shape in shapes)
             {
-                shape.Print();
+                Console.WriteLine(shape.GetArea()+ "  "+ shape.GetPerimeter());
             }
         }
     }

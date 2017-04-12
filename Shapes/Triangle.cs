@@ -6,11 +6,19 @@ using System.Threading.Tasks;
 
 namespace Shapes
 {
-    class Triangle : Shape
+    class Triangle : IShape
     {
         public int A { get; set; }
         public int B { get; set; }
         public int C { get; set; }
+
+        public double Area
+        {
+            get
+            {
+                return GetArea();
+            }
+        }
 
         public Triangle(int a, int b, int c)
         {
@@ -19,12 +27,12 @@ namespace Shapes
             this.C = c;
         }
         
-        public override double GetArea()
+        public  double GetArea()
         {
             return -1;
         }
 
-        public override double GetPerimeter()
+        public  double GetPerimeter()
         {
             return this.A + this.B + this.C;
         }

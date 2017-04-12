@@ -6,10 +6,18 @@ using System.Threading.Tasks;
 
 namespace Shapes
 {
-    class Rectangle : Shape
+    class Rectangle : IShape
     {
         private int Length { get; set; }
         private int Width { get; set; }
+
+        public double Area
+        {
+            get
+            {
+                return GetArea();
+            }
+        }
 
         public Rectangle(int length, int width)
         {
@@ -17,12 +25,12 @@ namespace Shapes
             this.Width = width;
         }
 
-        public override double GetArea()
+        public  double GetArea()
         {
              return this.Length * this.Width;
         }
 
-        public override double GetPerimeter()
+        public  double GetPerimeter()
         {
             return 2 * (this.Length + this.Width);
         }
